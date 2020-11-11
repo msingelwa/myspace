@@ -1,30 +1,37 @@
-import React, { Component } from 'react'
-import Tenants from '../project/Tenants'
-import Notifications from './Notifications'
-import { connect } from 'react-redux'
+import React from 'react'
+import firebase from 'firebase'
 
-class Dashboard extends Component {
-    render() {
-        const { complaints } = this.props
-        return (
-            <div className="dashboard container">
-                <div className="row">
-                    <div className="col s12 m6">
-                        <h4 className="text-center">List of Tenants</h4>
-                        <Notifications />
+const Dashboard = ({ tenants }) => {
+
+    return (
+        <>
+            <h4>Dashboard</h4>
+            <div className="row center m-3">
+                <div className="card" style={{ width: "22rem" }}>
+                    <img className="img-fluid" alt="" src="https://mdbootstrap.com/img/Photos/Others/images/10.jpg" />
+                    <div className="card body">
+                        <h5>Complaint title</h5>
+                        <p >
+                            Some quick example text to build on the card title and make
+                            up the bulk of the card&apos;s content.
+                        </p>
+                        <button className="btn btn-primary">View Complaint</button>
                     </div>
-                    <div className="col s12 m5 offset-m1">
-                        <h4 className="text-center">Complaints</h4>
-                        <Tenants complaints={complaints} />
+                </div>
+                <div className="card" style={{ width: "22rem" }}>
+                    <img className="img-fluid" alt="" src="https://mdbootstrap.com/img/Photos/Others/images/2.jpg" />
+                    <div className="card body">
+                        <h5>Complaint title</h5>
+                        <p>
+                            Some quick example text to build on the card title and make
+                            up the bulk of the card&apos;s content.
+                        </p>
+                        <button className="btn btn-primary">View Complaint</button>
                     </div>
                 </div>
             </div>
-        )
-    }
+        </>
+    )
 }
-const mapStateToProps = (state) => {
-    return {
-        complaints: state.complain.complaints
-    }
-}
-export default connect(mapStateToProps)(Dashboard)
+
+export default Dashboard

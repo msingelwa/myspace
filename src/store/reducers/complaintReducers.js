@@ -11,6 +11,9 @@ const complainReducers = (state = initState, action) => {
         case 'CREATE_COMPLAINT':
             console.log("created a complaint", action.complaint);
             return state
+        case 'CREATE_COMPLAINT_ERROR':
+            console.log("created a error", action.err);
+            return state
         default:
             return state
     }

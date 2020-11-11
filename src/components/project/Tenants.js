@@ -7,7 +7,7 @@ const Tenants = ({ complaints }) => {
     return (
         <div className="project-list section">
             <div>
-                
+                <h4 className="center text-white">Tenants Component</h4>
             </div>
             {
                 complaints && complaints.map((complaint) => {

@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom'
 const SignedOutLinks = () => {
     return (
         <ul className="right">
-            <li><Link to="/signin">Login</Link></li>
+            <li><Link to="/">Login</Link></li>
             <li><Link to="/signup">Sign Up</Link></li>
         </ul>
     )
 }
-
 export default SignedOutLinks
